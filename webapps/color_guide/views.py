@@ -1,26 +1,7 @@
 from django.contrib.auth.models import User
-from color_guide.serializers import UserSerializer, ColorSerializer
-from rest_framework import generics
-from rest_framework.views import APIView
-from color_guide.models import Color
+from color_guide.serializers import UserSerializer, ColorSerializer, ColorPaletteSerializer
+from color_guide.models import Color, ColorPalette
 from rest_framework import viewsets
-from rest_framework.decorators import detail_route
-
-"""
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class ColorList(generics.ListCreateAPIView):
-    queryset = Color.objects.all()
-    serializer_class = ColorSerializer
-
-
-class ColorDetail(generics.RetrieveAPIView):
-    queryset = Color.objects.all()
-    serializer_class = ColorSerializer
-"""
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -37,3 +18,11 @@ class ColorViewSet(viewsets.ModelViewSet):
     """
     queryset = Color.objects.all()
     serializer_class = ColorSerializer
+
+
+class ColorPaletteViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list` and `detail` actions.
+    """
+    queryset = ColorPalette.objects.all()
+    serializer_class = ColorPaletteSerializer

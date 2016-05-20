@@ -1,4 +1,3 @@
 *.pyc
 __pycache__
 webapps/mydatabase
-webapps/color_guide/migrations

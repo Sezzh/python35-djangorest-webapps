@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'color_guide',
+    # We add the application to CORS
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,6 +52,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # added to the application corsheader
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'webapps.urls'
@@ -77,22 +82,15 @@ WSGI_APPLICATION = 'webapps.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    }
-}
-"""
-DATABASES = {
-    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'web',
+        'NAME': 'web_apps_rest',
         'USER': 'user_web_apps',
         'PASSWORD': '$pascual#',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -134,3 +132,69 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+"""
+specify a list of origin hostnames that are authorized to make
+a cross-site HTTP request.
+"""
+CORS_ORIGIN_WHITELIST = ()
+
+"""
+specify a regex list of origin hostnames that are authorized to make
+a cross-site HTTP request; Useful when you have a large amount of
+subdomains for instance.
+"""
+CORS_ORIGIN_REGEX_WHITELIST = ()
+
+"""
+specify the allowed HTTP methods that can be used when making
+the actual request.
+"""
+CORS_ALLOW_METHODS = (
+        'GET',
+        'POST',
+        'PUT',
+        'PATCH',
+        'DELETE',
+        'OPTIONS'
+    )
+
+"""
+Specify which non-standard HTTP headers can be used when
+making the actual request
+"""
+
+CORS_ALLOW_HEADERS = (
+        'x-requested-with',
+        'content-type',
+        'accept',
+        'origin',
+        'authorization',
+        'x-csrftoken'
+    )
+
+"""
+CORS_EXPOSE_HEADERS: specify which HTTP headers
+are to be exposed to the browser.
+"""
+CORS_EXPOSE_HEADERS = ()
+
+"""
+Specify the number of seconds a client/browser can cache the preflight response
+"""
+CORS_PREFLIGHT_MAX_AGE = 86400
+
+"""
+specify whether or not cookies are allowed to be included in cross-site HTTP
+requests (CORS)
+"""
+CORS_ALLOW_CREDENTIALS = False
+
+"""
+CORS_REPLACE_HTTPS_REFERER: specify whether to replace the HTTP_REFERER header
+if CORS checks pass so that CSRF django middleware checks will work with https
+Require:
+corsheaders.middleware.CorsPostCsrfMiddleware
+django.middleware.csrf.CsrfViewMiddleware
+"""
+CORS_REPLACE_HTTPS_REFERER = False
