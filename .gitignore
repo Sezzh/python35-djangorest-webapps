@@ -1,3 +1,4 @@
 *.pyc
 __pycache__
-webapps/db.sqlite3
+webapps/mydatabase
+webapps/color_guide/migrations
