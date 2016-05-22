@@ -8,4 +8,4 @@ class ColorPalette(models.Model):
     color = models.ManyToManyField(Color)
     name = models.CharField(max_length=100, null=False)
     category_name = models.CharField(max_length=100, null=False)
-    owner = models.ManyToManyField(User)
+    user = models.ManyToManyField(User)

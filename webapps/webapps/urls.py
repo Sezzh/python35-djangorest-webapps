@@ -17,5 +17,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^', include('colors.urls')),
-    url(r'^', include('color_palettes.urls')),   
+    url(r'^', include('color_palettes.urls')),
+    url(r'^', include('typography.urls')), 
 ]
