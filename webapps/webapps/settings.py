@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'colors',
+    'color_palettes',   
     # We add the application to CORS
     'corsheaders',
 ]

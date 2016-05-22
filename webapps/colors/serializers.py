@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from colors.models import Color, ColorPalette
+from colors.models import Color
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,9 +13,3 @@ class ColorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Color
         fields = ('url', 'hexa', 'opacity', 'rgb', 'name', 'user')
-
-
-class ColorPaletteSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = ColorPalette
-        fields = ('url', 'name', 'category_name', 'color')
