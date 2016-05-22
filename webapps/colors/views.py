@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
-from color_guide.serializers import UserSerializer, ColorSerializer, ColorPaletteSerializer
-from color_guide.models import Color, ColorPalette
+from colors.serializers import UserSerializer, ColorSerializer, ColorPaletteSerializer
+from colors.models import Color, ColorPalette
 from rest_framework import viewsets
 
 

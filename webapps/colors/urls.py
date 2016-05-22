@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
-from color_guide.views import UserViewSet, ColorViewSet, ColorPaletteViewSet
+from colors.views import UserViewSet, ColorViewSet, ColorPaletteViewSet
 
 
 user_list = UserViewSet.as_view({

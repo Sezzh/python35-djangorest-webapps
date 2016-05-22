@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from color_guide.models import Color, ColorPalette
+from colors.models import Color, ColorPalette
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
