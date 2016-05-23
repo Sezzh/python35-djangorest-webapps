@@ -12,4 +12,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class ColorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Color
-        fields = ('url', 'hexa', 'opacity', 'rgb', 'name', 'user')
+        fields = ('url', 'hexa', 'opacity', 'rgb', 'name', 'user_id')
