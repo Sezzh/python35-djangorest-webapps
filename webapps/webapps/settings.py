@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'colors',
     'color_palettes',
     'typography',
+    'style_guides',
     # We add the application to CORS
     'corsheaders',
 ]

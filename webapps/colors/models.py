@@ -5,11 +5,11 @@ from django.db import models
 
 
 class Color(models.Model):
-    user = models.ManyToManyField(User)
-    hexa = models.CharField(max_length=15, null=False)
-    opacity = models.DecimalField(max_digits=4, decimal_places=2, null=False)
+    hexa = models.CharField(max_length=10, null=False)
+    opacity = models.DecimalField(max_digits=5, decimal_places=2, null=False)
     rgb = models.CharField(max_length=20, null=False)
     name = models.CharField(max_length=100, null=False)
+    user_id = models.ManyToManyField(User)
 
     def __str__(self):
         return '%s' % (self.name)

@@ -13,8 +13,8 @@ typography_detail = TypographyViewSet.as_view({
 
 
 urlpatterns = [
-    url(r'^typographys/$', typography_list, name='typography-list'),
-    url(r'^typographys/(?P<pk>[0-9]+)/$', typography_detail,
+    url(r'^typography/$', typography_list, name='typography-list'),
+    url(r'^typography/(?P<pk>[0-9]+)/$', typography_detail,
         name='typography-detail')
 ]
 
