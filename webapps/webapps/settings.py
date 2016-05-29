@@ -25,7 +25,10 @@ SECRET_KEY = 'ce9^kn3gd08v8*0x=@50_+d4waq4u@(8vvg8l1r-pst*u449l5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "http://localhost:3000",
+    "http://localhost:8080"
+]
 
 
 # Application definition
@@ -88,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'web_apps_rest',
         'USER': 'user_web_apps',
-        'PASSWORD': '$pascual#',
+        'PASSWORD': 'bebi201644',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -140,7 +143,10 @@ STATIC_URL = '/static/'
 specify a list of origin hostnames that are authorized to make
 a cross-site HTTP request.
 """
-CORS_ORIGIN_WHITELIST = ()
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+    'localhost:8080'
+)
 
 """
 specify a regex list of origin hostnames that are authorized to make
