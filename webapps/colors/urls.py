@@ -8,14 +8,16 @@ user_list = UserViewSet.as_view({
     'post': 'create'
 })
 user_detail = UserViewSet.as_view({
-    'get': 'retrieve'
+    'get': 'retrieve',
 })
 color_list = ColorViewSet.as_view({
     'get': 'list',
     'post': 'create'
 })
 color_detail = ColorViewSet.as_view({
-    'get': 'retrieve'
+    'get': 'retrieve',
+    'put': 'update',
+    'delete': 'destroy'
 })
 
 
